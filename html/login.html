@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="shortcut icon" href="../img/logo.jpg">
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+    <title> Login - Delivery Shop</title>
+    <style type="text/css">
+         img{border-radius: 70px;}
+    </style>
+</head>
+
+<body onload="onLoad()">
+
+    <div id="outer">
+        <div id="middle">
+            <div id="inner">
+                <form method="POST" action="../php/systemLogin.php">
+                    <img src="../img/logo.jpg" alt="">
+                    <h1>Faça seu Login</h1>
+                    <input type="text" id="email" name="email" placeholder="E-mail"
+                        pattern="\S+@\w+\.\w{2,6}(\.\w{2})?">
+                    <br>
+                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <br>
+                    <button type="submit">Entrar</button>
+
+                </form>
+
+
+                <p>Não tem uma conta? <a href="../html/cadastro.html">Cadastre-se!</a></p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function onLoad(){
+            var query = location.search.slice(1);
+            var partes = query.split('&');
+            var data = {};
+            partes.forEach(function (parte) {
+                var chaveValor = parte.split('=');
+                var chave = chaveValor[0];
+                var valor = chaveValor[1];
+                data[chave] = valor;
+            });
+            if (data['id'] == 401) {
+                Swal.fire({
+                    title: 'Erro no login',
+                    text: 'Não foi possível acessar seu login nesse momento! Favor, verifique o email e senha e tente novamente',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#a11919',
+                });
+            }
+        }
+    </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+
+</html>

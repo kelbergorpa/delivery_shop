@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./img/logo.jpg">
+    <title>Delivery Shop</title>
+    <style type="text/css">
+        img{border-radius: 60px;}
+   </style>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body onLoad="slideFunction()">
+    <header>
+        <img src="./img/logo.jpg" alt="">
+        <a href="./html/login.html">entrar</a>
+    </header>
+
+    <div id="slide">
+        <ul>
+            <li class="seta" onclick="prevSlide()"></li>
+        </ul>
+        <div id="desc">
+            <h1>Gostaria de fazer compras sem sair de casa?</h1>
+            <br>
+            <p> Se você quer receber seus produtos no conforto de sua casa está no lugar certo! Cadastre-se em nosso site e conheça as mais
+                diversas lojas da sua região.</p>
+            <br>
+            <a href="./html/login.html">Peça agora!</a>
+        </div>
+
+        <ul>
+            <li class="inverse" onclick=nextSlide();></li>
+        </ul>
+
+        <div class="imgBox">
+
+            <img src="./img/fundo1.jpg" alt="" class="active">
+            <img src="./img/fundo2.jpg" alt="">
+            <img src="./img/fundo3.jpg" alt="">
+            <img src="./img/fundo4.jpg" alt="">
+        </div>
+
+    </div>
+
+    <script src="./js/slide.js"></script>
+    <script src="./js/pluginIBGE.js"></script>
+</body>
+
+</html>

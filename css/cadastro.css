@@ -1,0 +1,280 @@
+body{
+    position: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url(../img/fundo7.jpg);
+    background-size: 1920px 1080px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*DIVISÕES PARA CENTRALIZAR*/
+#outer {
+    height: 400px; 
+    overflow: hidden; 
+    position: relative; 
+    text-align: center; 
+    margin: auto;
+}
+
+#outer[id] {
+    display: table; 
+    position: static;
+}
+
+#middle {
+    position: absolute; 
+    top: 70%;
+} 
+
+#middle[id] {
+    display: table-cell; 
+    vertical-align: middle; 
+    position: static;
+}
+
+/*BLOCO FINAL E PRINCIPAL*/
+#inner {
+    position: relative; 
+    top: -50%;
+    color: white;
+    margin: auto;
+    width: 400px;
+    height: 1100px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background: url(../img/cadastro.jpg);
+    }
+
+#inner img {
+    width: 120px;
+    height: 120px;
+}
+
+ul{
+    margin-left:-35px ;
+    list-style: none;
+}
+
+/*STYLE INPUT RADIO*/
+.containerRadio{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.containerRadio input{
+    display: none;
+}
+
+.containerRadio .circle{
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background-color: #eeeeee;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.containerRadio input:checked + .circle{
+    background-color: white;
+    transition: 0.4s;
+}
+
+.containerRadio input:checked + .circle:after{
+   content: '';
+   height: 7px;
+   width: 7px;
+   background-color: rgb(116, 0, 0);
+   position: absolute;
+   border-radius: 100%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   transition: 0.4s;
+}
+
+/*STYLE INPUT TEXT*/
+
+input[type="text"],input[type="password"]{
+    margin-top: 15px;
+    background: unset;
+    border-bottom: solid 2px rgb(0, 0, 0);
+    border-right: solid 1px rgb(0, 0, 0);
+    border-left: solid 1px rgb(0, 0, 0);
+    border-top: solid 1px rgb(0, 0, 0);
+    padding: 7px;
+    border-radius: 40px;
+    color: white;
+}
+
+textarea:focus, input:focus, button:focus {
+    outline: 0;
+} 
+
+input[type="text"]::-webkit-input-placeholder,  input[type="password"]::-webkit-input-placeholder{
+    color: rgb(180, 178, 178);
+    font-size: 12px;
+ }
+ 
+label{
+     font-size: 12px;
+     margin-left: auto;
+     margin-top: 4px;
+ }
+
+#numeroR{
+     width: 50px;
+ }
+
+ #email, #senha,#confsenha, #cpf, #cnpj{
+    width: 300px !important;
+}
+
+/*STYLE VERIFICAÇÃO DE SENHA*/
+.veriVermelho{
+    
+    position: relative;
+    list-style: none;
+    z-index: 30;
+ }
+
+ 
+
+ .veriVermelho li{
+    position: absolute;
+    background-color: #ff0000;
+    border-radius: 100px;
+    width: 10px;
+    top:-20px;
+    right: 20px;
+    height: 10px;
+    z-index: 30;
+ }
+
+ .veriVerde{
+    
+    position: relative;
+    list-style: none;
+    z-index: 30;
+ }
+
+
+ .veriVerde li{
+    position: absolute;
+    background-color: #15ff00;
+    border-radius: 100px;
+    width: 10px;
+    top:-20px;
+    right: 20px;
+    height: 10px;
+    z-index: 30;
+ }
+
+
+ .veriAmarelo{
+    
+    position: relative;
+    list-style: none;
+    z-index: 30;
+ }
+
+
+ .veriAmarelo li{
+    position: absolute;
+    background-color: #fbff00;
+    border-radius: 100px;
+    width: 10px;
+    top:-20px;
+    right: 20px;
+    height: 10px;
+    z-index: 30;
+ }
+
+/*STYLE SELECT*/
+.label-div{
+  display: flex;
+  margin-top: 10px;
+
+}
+
+.select-box select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  width: 160px;
+  outline: 0;
+  box-shadow: none;
+  border: none !important;
+  background: none;
+}
+
+.select-box select::-ms-expand{
+  display: none;
+}
+
+.select-box{
+  position: relative;
+  display: flex;
+  background: transparent;
+  width: 200px;
+  margin-right: auto;
+  margin-left: 5px;
+  border-bottom: solid 2px rgb(0, 0, 0);
+  border-right: solid 1px rgb(0, 0, 0);
+  border-left: solid 1px rgb(0, 0, 0);
+  border-top: solid 1px rgb(0, 0, 0);
+  padding: 7px;
+  overflow: hidden;
+  border-radius: 40px;
+  color: rgb(255, 255, 255);
+}
+
+select{
+  flex: 1;
+  cursor: pointer; 
+  color: rgb(105, 105, 105);
+}
+
+.select-box option{
+ color: black;
+}
+.select-box:after{
+  content: ' \25BC';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: firebrick;
+  background: white;
+  padding: 5px;
+  cursor: pointer !important;
+  pointer-events: none;
+}
+/*STYLE BUTTON*/
+
+button{
+    background: white;
+    color: rgb(116, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 20px;
+    border: unset;
+    border-radius: 100px;
+    box-shadow: -4px 4px 20px black;
+    transition: 0.2s;
+ }
+
+ button:hover{
+    background: rgb(151, 0, 0);
+    box-shadow: -4px 4px 20px black;
+    color: white;
+    transition: 0.2s;
+ }

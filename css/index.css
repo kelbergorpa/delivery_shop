@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(0, 0, 0);
+}
+
+/* BARRA DE ENTRAR*/
+header {
+    padding: 10px;
+    width: 100%;
+    height: 25px;
+    background:url(../img/bar.jpg); 
+    text-align: center;
+    border-bottom: solid 2px white;
+}
+
+header img{
+    border-radius: 60px;
+    position: absolute;
+    z-index: 100;
+    margin-top: -20px;
+    margin-left: -40px;
+    width: 120px;
+    height: 120px;
+}
+
+header a {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    margin-right: 39px;
+    font-size: 15px;
+    padding: 0px 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-right: solid 1px white;
+    border-left: solid 1px white;
+    transition: 0.5s;
+    
+}
+
+header a:hover{
+    background: white;
+    padding: 2px 5px;
+    border-radius: 100px;
+    color:rgb(116, 0, 0) ;
+    transition: 0.5s;
+    box-shadow: 9px 8px 40px black;
+}
+
+/*SLIDE*/
+
+#slide{
+    position: block;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s;
+
+}
+
+#slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s;
+}
+
+
+#slide .active {
+    display: flex;
+    opacity: 1;
+    transition: 1s;
+}
+
+/*BOTÕES DE PASSAR O SLIDE*/
+
+#slide ul{
+    list-style: none;
+    z-index: 30;
+}
+#slide ul .seta{
+    position: absolute;
+    background-color:  white;
+    border-radius: 100px;
+    top:50%;
+    left: 13px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    cursor: pointer;
+    box-shadow: -7px 7px 20px black;
+    z-index: 30;
+    
+}
+
+#slide ul .seta:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-left: black 3px solid;
+    border-bottom: black 3px solid;
+    transform: rotate(45deg);
+    z-index: 30;
+}
+
+#slide ul .inverse{
+    position: absolute;
+    background-color:  white;
+    border-radius: 100px;
+    top:50%;
+    right: 13px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    cursor: pointer;
+    box-shadow: -7px 7px 20px black;
+    z-index: 30;
+}
+
+#slide ul .inverse:before{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-left: black 3px solid;
+    border-bottom: black 3px solid;
+    transform: rotate(225deg);
+    z-index: 30;
+}
+
+
+#slide ul .inverse:hover, #slide ul .seta:hover {
+    background: rgb(151, 0, 0);
+    transition: 0.4s;
+    z-index: 30;
+}
+
+
+/*CAIXA DE DESCRIÇÃO*/
+
+#desc{
+    padding: 10px;
+    text-align: center;
+    bottom: 10%;
+    left: 10%;
+    position: fixed;
+    color: white;
+    background:url(../img/desc.jpg); 
+    border-radius: 10px;
+    background-size: 370px 220px;
+    width: 350px;
+    height: 210px;
+    box-shadow: 9px 8px 40px black;
+    z-index: 30;
+}
+
+#desc h1{
+    font-size: 22px;
+    text-transform: uppercase;
+    background: white;
+    opacity: 0.6;
+    color: rgb(116, 0, 0) ;
+    border-radius: 10px;
+}
+
+#desc p{
+    font-size: 15px;
+    text-align: justify;
+}
+
+#desc a{
+    background: white;
+    color: rgb(116, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 100px;
+    box-shadow: -7px 7px 20px black;
+    transition: 0.2s;
+}
+
+#desc a:hover{
+    background: rgb(151, 0, 0);
+    box-shadow: -7px 7px 20px black;
+    color: white;
+    transition: 0.2s;
+}

@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: block;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: url(../img/fundo7.jpg);
+    background-size: 1920px 1100px;
+}
+/*DIVISÕES PARA CENTRALIZAR*/
+#outer {
+    height: 400px; 
+    overflow: hidden; 
+    position: relative; 
+    text-align: center; 
+    margin: auto;
+    
+}
+
+
+#outer[id] {
+    display: table; 
+    position: static;
+}
+
+
+#middle {
+    position: absolute; 
+    top: 50%;
+} 
+
+#middle[id] {
+    display: table-cell; 
+    vertical-align: middle; 
+    position: static;
+}
+
+/*BLOCO FINAL E PRINCIPAL*/
+#inner {
+    position: relative; 
+    top: -50%;
+    background: url(../img/login.jpg);
+    padding: 100px 50px;
+    color: rgb(0, 0, 0);
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    }
+
+
+#inner img{
+    width: 150px;
+    height: 150px;
+}
+
+#inner h1{
+    text-transform: uppercase;
+}
+
+input[type="text"],input[type="password"]{
+    margin-top: 15px;
+    height: 25px;
+    width: 250px;
+    background: unset;
+    border-bottom: solid 3px rgb(0, 0, 0);
+    border-right: solid 2px rgb(0, 0, 0);
+    border-left: solid 2px rgb(0, 0, 0);
+    border-top: solid 2px rgb(0, 0, 0);
+    
+    padding: 7px;
+    border-radius: 40px;
+    color: rgb(0, 0, 0);
+}
+
+textarea:focus, input:focus, select:focus, button:focus {
+    outline: 0;
+} 
+
+input[type="text"]::-webkit-input-placeholder,  input[type="password"]::-webkit-input-placeholder{
+    color: rgba(37, 37, 37, 0.514);
+    font-size: 12px;
+ }
+
+ button{
+    background: white;
+    color: rgb(116, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 20px;
+    border: unset;
+    border-radius: 100px;
+    box-shadow: -4px 4px 20px black;
+    transition: 0.2s;
+ }
+
+ button:hover{
+    background: rgb(151, 0, 0);
+    box-shadow: -4px 4px 20px black;
+    color: white;
+    transition: 0.4s;
+ }
+
+ p{
+     margin-top:35px;
+     font-size: 13px;
+ }
+
+ #inner a {
+    color: white;
+ }
+
+ #inner a:hover{
+    color: rgb(255, 102, 102);
+    transition: 0.4s;
+
+ }
+

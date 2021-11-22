@@ -1,0 +1,384 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: whitesmoke;
+}
+
+#box{
+    display: flex;
+    height: 100%;
+    
+}
+
+.fundo{
+    filter: blur(2px);
+    pointer-events: none;
+
+}
+
+
+/*USUÁRIO BAR*/
+
+#box .container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    height: 100%;
+    background: url(../img/cadastro.jpg);
+    background-size: 450px 1000px;
+    
+    
+}
+
+#box .container img{
+
+    height: 200px !important;
+    width: 200px;
+    border: solid 3px white;
+    border-radius: 100%;
+}
+
+
+#box .container button {
+    background: white;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 40px;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 15px;
+    color:rgb(116, 0, 0);
+    text-transform: uppercase;
+     
+}
+
+button:focus,input:focus,textarea{
+    outline: 0;
+}
+
+#box .container button:hover{
+    background: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+#box .container a{
+    color:rgb(116, 0, 0);
+    text-decoration: none;
+}
+
+/*PEDIDOS*/
+
+.pedido{
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    text-align: center;
+}
+
+.pedido table tr td {
+    background: rgb(116, 0, 0);
+    padding: 80px;
+    color: white;
+
+}
+
+.pedido table tr td a{
+    background: white;
+    color: rgb(116, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 100px;
+    box-shadow: -7px 7px 20px black;
+    transition: 0.2s;
+}
+
+.pedido table tr td a:hover {
+    background: rgb(151, 0, 0);
+    box-shadow: -7px 7px 20px black;
+    color: white;
+    transition: 0.2s;
+}
+
+.pedido table tr td:hover, .catalogo button:hover, .editar-perfil button:hover, .pedido-detalhado button:hover{
+    background: rgb(165, 0, 0);
+    cursor: pointer;
+}
+
+/*SOBRE-TELAS*/
+
+.visivel{
+   display: unset !important;
+
+}
+
+.editar-perfil{
+    top: 50px !important;
+}
+
+.historico-de-pedidos{
+    height: 700px;
+    overflow-y: scroll;
+}
+
+.catalogo, .editar-perfil,.historico-de-pedidos, .pedido-detalhado{
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 30%;
+    width: 800px;
+    background: whitesmoke;
+    border:solid 1px grey;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.historico-de-pedidos h4, .pedido-detalhado h4, .pedido-detalhado h3{
+    color: rgb(116, 0, 0);
+}
+.catalogo h1{
+    color: rgb(116, 0, 0);
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.catalogo input[type="text"], .editar-perfil input[type="text"]{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 170px;
+    background: unset;
+    border-bottom: solid 2px rgb(116, 0, 0);
+    border-right: solid 1px  rgb(116, 0, 0);
+    border-left: solid 1px  rgb(116, 0, 0);
+    border-top: unset;
+    padding: 7px;
+    border-radius: 40px;
+    color:  rgb(116, 0, 0);
+}
+
+.catalogo button, .editar-perfil button, .pedido-detalhado button{
+    background: rgb(116, 0, 0);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.catalogo textarea, .editar-perfil textarea{
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(116, 0, 0);
+    font-size: 13px;
+    background: transparent;
+    border-bottom: solid 2px rgb(116, 0, 0);
+    border-right: solid 1px rgb(116, 0, 0);
+    border-left: solid 1px rgb(116, 0, 0);
+    border-top: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    height: 120px;
+    width: 240px;
+    padding: 15px;
+    resize: none;
+}
+
+
+.catalogo textarea::-webkit-scrollbar-track, .editar-perfil textarea::-webkit-scrollbar-track {
+    background-color: rgb(151, 0, 0);
+}
+.catalogo textarea::-webkit-scrollbar, .editar-perfil textarea::-webkit-scrollbar {
+    width: 4px;
+    background: rgb(151, 0, 0);
+}
+.catalogo textarea::-webkit-scrollbar-thumb, .editar-perfil textarea::-webkit-scrollbar-thumb {
+    background: #f40000;
+}
+
+/*SELECT STYLE*/
+
+.select-box select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    width: 160px;
+    outline: 0;
+    box-shadow: none;
+    border: none !important;
+    background: none;
+  }
+  
+  .select-box select::-ms-expand{
+    display: none;
+  }
+
+.select-box{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    background: transparent;
+    width: 200px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: solid 2px rgb(116, 0, 0);
+    border-right: solid 1px rgb(116, 0, 0);;
+    border-left: solid 1px rgb(116, 0, 0);;
+    border-top: unset;
+    padding: 7px;
+    overflow: hidden;
+    border-radius: 40px;
+    color: rgb(116, 0, 0);;
+  }
+  
+  select{
+    flex: 1;
+    cursor: pointer; 
+    color: rgb(116, 0, 0);;
+  }
+  
+  .select-box option{
+   color: black;
+  }
+  .select-box:after{
+    content: ' \25BC';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+    background: rgb(116, 0, 0);;
+    padding: 5px;
+    cursor: pointer !important;
+    pointer-events: none;
+  }
+
+  
+
+.editar-perfil input[type="time"]{
+    background: transparent;
+    border-bottom: solid 2px rgb(116, 0, 0);
+    border-right: solid 1px rgb(116, 0, 0);
+    border-left: solid 1px rgb(116, 0, 0);
+    border-top: none;
+    border-radius: 40px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.procurar{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    position: relative;
+    background-color:rgb(116, 0, 0);
+    border-radius:15px;
+    height: 27px;
+    width:250px;
+
+}
+.procurar i{
+    margin-top: -2px;
+    color: white;
+
+}
+
+.procurar i:hover{
+    color: grey;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#spaceprocurar{
+    color: white;
+    float:left;
+    background-color:transparent;
+    border: none;
+    padding-left:5px;
+    font-size:10px;
+    border:none;
+    height:32px;
+    height: 20px;
+    width:210px;
+}
+
+#spaceprocurar datalist{
+    display: none;
+}
+
+.historico-de-pedidos table{
+    width: 100%;
+    border:solid 2px rgb(116, 0, 0);
+    margin-top: 10px;
+}
+
+.historico-de-pedidos table tr td p{
+    margin-top: -10px;
+}
+
+.historico-de-pedidos table tr td{
+    border:solid 2px rgb(116, 0, 0);
+}
+
+
+.fa-times{
+   color: rgb(116, 0, 0);
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   font-size: 30px;
+}
+
+.fa-times:hover{
+    color: rgb(165, 0, 0);
+    cursor: pointer;
+}
+
+.pedido-detalhado table{
+  margin-top: -20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pedido-detalhado table tr td,.pedido-detalhado table tr th{
+    padding: 5px 15px 5px 15px;
+    color: rgb(116, 0, 0);
+}
+
+.pedido-detalhado p{
+    margin-top: -10px;
+}
+
+.file-close{
+    display: none;
+}
+.file{
+        background-color: rgb(116, 0, 0);
+        color: white;
+        padding: 0.5rem;
+        font-family: sans-serif;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        margin-top: 1rem;
+    
+}
