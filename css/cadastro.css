@@ -43,7 +43,7 @@ body{
     height: 1100px;
     text-align: center;
     color: rgb(0, 0, 0);
-    background: url(../img/cadastro.jpg);
+    /*background: url(../img/cadastro.jpg);*/
     }
 
 #inner img {
@@ -75,7 +75,9 @@ ul{
     position: relative;
     width: 14px;
     height: 14px;
-    background-color: #eeeeee;
+    background-color: #ffffff;
+    border: solid 1px;
+    border-color: black ;
     right: 0;
     top: 0;
     border-radius: 50%;
@@ -85,6 +87,29 @@ ul{
 .containerRadio input:checked + .circle{
     background-color: white;
     transition: 0.4s;
+}
+header {
+    padding: 10px;
+    width: 100%;
+    height: 25px;
+    background:url(../img/bar.jpg); 
+    text-align: center;
+    border-bottom: solid 2px white;
+}
+header a {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    margin-right: 39px;
+    font-size: 15px;
+    padding: 0px 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-right: solid 1px white;
+    border-left: solid 1px white;
+    transition: 0.5s;
+    
 }
 
 .containerRadio input:checked + .circle:after{
@@ -111,7 +136,9 @@ input[type="text"],input[type="password"]{
     border-top: solid 1px rgb(0, 0, 0);
     padding: 7px;
     border-radius: 40px;
-    color: white;
+    color: rgb(0, 0, 0);
+    background: white;
+    opacity: 0.89;
 }
 
 textarea:focus, input:focus, button:focus {
@@ -119,12 +146,14 @@ textarea:focus, input:focus, button:focus {
 } 
 
 input[type="text"]::-webkit-input-placeholder,  input[type="password"]::-webkit-input-placeholder{
-    color: rgb(180, 178, 178);
-    font-size: 12px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    
  }
  
 label{
-     font-size: 12px;
+     font-size: 18px;
+     font-weight: bold;
      margin-left: auto;
      margin-top: 4px;
  }
@@ -223,7 +252,8 @@ label{
 .select-box{
   position: relative;
   display: flex;
-  background: transparent;
+  opacity: 0.89;
+  background: white;
   width: 200px;
   margin-right: auto;
   margin-left: 5px;
@@ -240,7 +270,7 @@ label{
 select{
   flex: 1;
   cursor: pointer; 
-  color: rgb(105, 105, 105);
+  color: rgb(0, 0, 0);
 }
 
 .select-box option{
@@ -264,6 +294,7 @@ button{
     color: rgb(116, 0, 0);
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: bold;
     padding: 10px;
     margin-top: 20px;
     border: unset;

@@ -152,31 +152,40 @@ header a:hover{
 #desc{
     padding: 10px;
     text-align: center;
-    bottom: 10%;
-    left: 10%;
+    bottom: 40%;
+    left: 40%;
     position: fixed;
-    color: white;
-    background:url(../img/desc.jpg); 
+    background:url(../img/desc.jpg);
     border-radius: 10px;
     background-size: 370px 220px;
+    border: solid 1px;
+    border-color: black;
     width: 350px;
     height: 210px;
     box-shadow: 9px 8px 40px black;
     z-index: 30;
+    opacity: 0.8;
+    
 }
 
 #desc h1{
     font-size: 22px;
-    text-transform: uppercase;
-    background: white;
-    opacity: 0.6;
-    color: rgb(116, 0, 0) ;
+    background: rgb(57, 77, 255);
+    color: rgb(255, 253, 253) ;
     border-radius: 10px;
+    text-transform: uppercase;
 }
 
 #desc p{
-    font-size: 15px;
-    text-align: justify;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+      text-shadow: 
+               -1px -1px 0px rgb(255, 255, 255), 
+               -1px 1px 0px rgb(255, 255, 255),                    
+                1px -1px 0px rgb(255, 255, 255),                  
+                1px 0px 0px rgb(247, 247, 247);
 }
 
 #desc a{

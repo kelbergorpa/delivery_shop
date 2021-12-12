@@ -21,6 +21,7 @@ function abrirPedido(){
     document.getElementById('box').classList.add('fundo');
 }
 
+
 function fecharAba(){
     document.getElementById('pedidodetalhado').classList.remove('visivel');
     document.getElementById('historico').classList.remove('visivel');

@@ -17,20 +17,7 @@
 <body>
     <header>
         <img src="../img/logo.jpg" alt="">
-        <div class="procurar">
-
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" name="" id="spaceprocurar" placeholder="Buscar..." list="historico">
-            <datalist id="historico">
-                <option value="Info Box"></option>
-                <option value="Loja"></option>
-            </datalist>
-
-        </div>
-
-        <div class="barinfo" style="margin-right: 50px;">
-            <a href="" class="user"> Usuário</a>
-        </div>
+        
 
         <div class="barinfo">
             <a href="systemLogoff.php" class="user"> Sair</a>
@@ -41,28 +28,10 @@
 
     <div id="blocoEstabelecimentos">
         <div id="buscarRegiao">
-            <div class="aux">
-                <label for="">Estado:</label>
-                <div id="" class="select-box">
-                    <select name="" id="">
-                        <option value="">Selecione</option>
-                        <option value="">Paraná</option>
-                        <option value="">Santa Catarina</option>
-                    </select>
-                </div>
-                <label for="">Cidade:</label>
-                <div class="select-box">
-                    <select name="" id="">
-                        <option value="">Selecione</option>
-                        <option value="">Guarapuava</option>
-                        <option value="">Balneário Camburiu</option>
-                    </select>
-                </div>
-                <a href="">Buscar <i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-
-
+           <h1> SELECIONE UMA LOJA </h1> 
         </div>
+
+
 
         <div id="estabelecimentos">
             <ul>
@@ -80,10 +49,10 @@
                     while ($row = $result->fetch_array()) {
                         $innerHtml = "
                         <li>
-                    <img src='../img/cadastro.jpg' alt=''>
+                    <img src='../img/teste.png' alt=''>
                     <div class='descEstabelecimento'>
                         <a href='./catalogo.php?id={$row['id']}'>{$row['nome']}</a>
-                        <h3>Endereço:{$row['estado']}/ {$row['cidade']}/{$row['bairro']}/{$row['rua']}Nº {$row['numero']}</h3>
+                        <h3>Bairro: {$row['bairro']} , Rua: {$row['rua']}, Nº {$row['numero']}</h3>
 
                         <div class='phone'>
                             <i class='fa fa-phone , iconphone' aria-hidden='true'></i>
@@ -103,7 +72,7 @@
                     </div>
 
                     <div class='hours'>
-                        <i class='fa fa-clock-o' aria-hidden='true'></i><label for=''>12h~21</label>
+                        <i class='fa fa-clock-o' aria-hidden='true'></i><label for=''>9h~18h</label>
                     </div>
 
                 </li>

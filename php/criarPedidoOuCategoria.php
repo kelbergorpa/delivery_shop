@@ -3,6 +3,8 @@ include("conexao.php");
 $tipo = $_GET['tipo'];
 echo $tipo;
 $nome = $_POST['nomeProduto'];
+$preco = $_POST['precoProduto'];
+$imagem = $_POST['imagemProduto'];
 $categoria = $_POST['categoriaProduto'];
 $descricao = $_POST['descricaoProduto'];
 
@@ -20,7 +22,7 @@ if ($tipo == "categoria") {
         header("Location: ./estabelecimento.php");
     }
 } else {
-    $insercao = "INSERT INTO produto(nome, id_categoria, descricao, id_estabelecimento) VALUE('{$nome}', 1, '{$descricao}', {$data['idLogado']})";
+    $insercao = "INSERT INTO produto(nome, preco, imagem, id_categoria, descricao, id_estabelecimento) VALUE('{$nome}','{$preco}','{$imagem}', '{$categoria}', '{$descricao}', {$data['idLogado']})";
 
     function debug_to_console($data, $context = 'Debug in Console') {
 

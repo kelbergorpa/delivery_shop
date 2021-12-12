@@ -5,6 +5,7 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
+    border-radius: 10%;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     background: whitesmoke;
@@ -13,6 +14,7 @@ body{
 #box{
     display: flex;
     height: 100%;
+    background-color: #d7d7d7;
     
 }
 
@@ -34,7 +36,10 @@ body{
     text-align: center;
     height: 100%;
     background: url(../img/cadastro.jpg);
+    border-right: solid 2px;
+    border-color: black;
     background-size: 450px 1000px;
+    color: ivory;
     
     
 }
@@ -56,9 +61,8 @@ body{
     border-radius: 40px;
     margin-right: auto;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 18px;
     color:rgb(116, 0, 0);
-    text-transform: uppercase;
      
 }
 
@@ -80,20 +84,25 @@ button:focus,input:focus,textarea{
 
 .pedido{
     display: block;
-    position: absolute;
+    margin-top: 1%;
+    margin-left: 20%;
     right: 5%;
     top: 5%;
+    
     text-align: center;
 }
 
 .pedido table tr td {
-    background: rgb(116, 0, 0);
+    background: rgb(121, 109, 83);
     padding: 80px;
-    color: white;
+    position: relative;
+    color: rgb(206, 204, 204);
+    border-radius: 5%;
+
 
 }
 
-.pedido table tr td a{
+.pedido table tr td .button{
     background: white;
     color: rgb(116, 0, 0);
     text-decoration: none;
@@ -104,22 +113,24 @@ button:focus,input:focus,textarea{
     transition: 0.2s;
 }
 
-.pedido table tr td a:hover {
+.pedido table tr td .button:hover {
     background: rgb(151, 0, 0);
     box-shadow: -7px 7px 20px black;
     color: white;
-    transition: 0.2s;
+    transition: 0.9s;
 }
 
 .pedido table tr td:hover, .catalogo button:hover, .editar-perfil button:hover, .pedido-detalhado button:hover{
-    background: rgb(165, 0, 0);
+    background: rgb(71, 28, 28);
     cursor: pointer;
+    transition: 0.9s;
 }
 
 /*SOBRE-TELAS*/
 
 .visivel{
    display: unset !important;
+  
 
 }
 
@@ -127,10 +138,7 @@ button:focus,input:focus,textarea{
     top: 50px !important;
 }
 
-.historico-de-pedidos{
-    height: 700px;
-    overflow-y: scroll;
-}
+
 
 .catalogo, .editar-perfil,.historico-de-pedidos, .pedido-detalhado{
     display: none;
@@ -165,7 +173,7 @@ button:focus,input:focus,textarea{
     border-bottom: solid 2px rgb(116, 0, 0);
     border-right: solid 1px  rgb(116, 0, 0);
     border-left: solid 1px  rgb(116, 0, 0);
-    border-top: unset;
+    border-top: solid 2px rgb(116, 0, 0);
     padding: 7px;
     border-radius: 40px;
     color:  rgb(116, 0, 0);
@@ -193,7 +201,7 @@ button:focus,input:focus,textarea{
     border-bottom: solid 2px rgb(116, 0, 0);
     border-right: solid 1px rgb(116, 0, 0);
     border-left: solid 1px rgb(116, 0, 0);
-    border-top: none;
+    border-top: solid 2px rgb(116, 0, 0);
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
     height: 120px;
@@ -245,7 +253,7 @@ button:focus,input:focus,textarea{
     border-bottom: solid 2px rgb(116, 0, 0);
     border-right: solid 1px rgb(116, 0, 0);;
     border-left: solid 1px rgb(116, 0, 0);;
-    border-top: unset;
+    border-top: solid 2px rgb(116, 0, 0);
     padding: 7px;
     overflow: hidden;
     border-radius: 40px;
@@ -280,7 +288,7 @@ button:focus,input:focus,textarea{
     border-bottom: solid 2px rgb(116, 0, 0);
     border-right: solid 1px rgb(116, 0, 0);
     border-left: solid 1px rgb(116, 0, 0);
-    border-top: none;
+    border-top: solid 2px rgb(116, 0, 0);
     border-radius: 40px;
     padding: 3px;
     margin-bottom: 10px;
@@ -291,7 +299,7 @@ button:focus,input:focus,textarea{
     margin-left: auto;
     margin-top: 5px;
     position: relative;
-    background-color:rgb(116, 0, 0);
+    background-color:rgb(206, 204, 204);
     border-radius:15px;
     height: 27px;
     width:250px;
@@ -299,7 +307,7 @@ button:focus,input:focus,textarea{
 }
 .procurar i{
     margin-top: -2px;
-    color: white;
+    color: rgb(255, 255, 255);
 
 }
 

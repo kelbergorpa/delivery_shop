@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/estabelecimento.css">
     <link rel="shortcut icon" href="../img/logo.jpg">
-    <title>Seu Loja - Delivery Shop</title>
+    <title>Sua Loja - Delivery Shop</title>
 </head>
 
 <body>
@@ -21,10 +21,11 @@
 
     <div id="box">
         <div class="container" id="container">
-            <img src="../img/teste.jpg" alt="">
+            <img src="../img/teste.png" alt="">
             <button name="historico" onclick="showHistorico()">Histórico de Pedidos</button>
             <button name="perfil" onclick="editarPerfil()">Editar Perfil</button>
-            <button name="catalogo" onclick="editarCatalogo()">Catalogo</button>
+            <button name="catalogo" onclick="editarCatalogo()">Cadastrar Produtos</button>
+            <button name="produtos" ><a href="http://localhost/delivery/php/visualizarProdutos.php?id=1">Visualizar Produtos</a></button>
             <button onclick="logoff()">Sair</button>
 
         </div>
@@ -37,158 +38,103 @@
 
 
         <div class="pedido">
+        <?php
+        
+
+        if(array_key_exists('button1', $_POST)) {
+            button1();
+        }
+        else if(array_key_exists('button2', $_POST)) {
+            button2();
+        }
+        function button1() {
+        include("conexao.php");
+        $teste2=$_POST['teste'];
+        $sql4 = "DELETE FROM pedido WHERE id_pedido = $teste2";
+        $result4 = mysqli_query($conexao, $sql4);
+        echo "<script>window.opener.location.reload();</script>";
+        echo "<script>window.close();</script>";
+        }
+        
+        
+    ?>  
+    
+      
+
+        
+
             <table>
                 <tr>
                     <!-- ADICIONAR A FUNÇÃO DE ABRIR PEDIDO-->
-                    <td onclick="abrirPedido()">
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
+                    <?php
+        include("conexao.php");
+        $sql = "SELECT * FROM pedido";
+        $result = mysqli_query($conexao, $sql);
+        $rows = mysqli_num_rows($result);
+        
+        if ($rows == 0) {
+        } else {
+            $escrever = "";
+            $escrever2 = "";
+            while ($row = $result->fetch_array()) {
+                $sql2 = "SELECT * FROM pessoa_fisica WHERE id = {$row['id_pessoa']}";
+                $result2 = mysqli_query($conexao, $sql2);
+                $rows2 = mysqli_num_rows($result2);
+                $sql3 = "SELECT * FROM produto WHERE id = {$row['id_produto']}";
+                $result3 = mysqli_query($conexao, $sql3);
+                $rows3 = mysqli_num_rows($result3);
 
-                        <a href="">Entregar</a>
-                    </td>
-                    <td onclick="abrirPedido()">
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
+                while ($row2 = $result2->fetch_array()) {
+                    $escrever2 =  "<h3>Nome: {$row2['nome']}</h3> <br> <h2>Endereço: {$row2['rua']}, Nº: {$row2['numero']}, Bairro: {$row2['bairro']}</h2>" ;
+                    while ($row3 = $result3->fetch_array()) {
+                        $escrever3 =  "<h3>Produto: {$row3['nome']}</h3> <br> <h2>Quantidade: {$row['quantidade']}, Valor: {$row['valor_total']}</h2>" ;
+                        
+                    } 
+                } 
+                $teste=$row['id_pedido'];
+                $escrever = "
+                <td onclick='abrirPedido()'>
+                        <h1>Ped: {$row['id_pedido']}</h1>
+                      {$escrever2}
+                      {$escrever3}
 
-                        <a href="">Entregar</a>
-                    </td>
-                    <td onclick="abrirPedido()">
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
+                <form  method='post'>
+                <input type='hidden' name='teste' value='{$teste}'>
+                <input type='submit' name=''
+                class='button' value='Finalizar Ped' />
+                </form>  
+                
+                
+                </td>
+                ";
 
-                        <a href="">Entregar</a>
-                    </td>
+                echo $escrever;
+            }
+        }
+            ?>
                 </tr>
-                <tr>
-                    <td onclick="abrirPedido()">
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-                    <td onclick="abrirPedido()">
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-                    <td onclick="abrirPedido()">
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td>
-                        <h1>PED 002</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-                    <td>
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-                    <td>
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td>
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-                    <td>
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-                    <td>
-                        <h1>PED 001</h1>
-                        <h3>Fernando Souza</h3>
-
-                        <a href="">Entregar</a>
-                    </td>
-
-                </tr>
-
-
-
+                
             </table>
         </div>
 
-
     </div>
+
+
+
 
     <div class="pedido-detalhado" id="pedidodetalhado">
-        <i class="fa fa-times" aria-hidden="true" onclick="fecharAba()"></i>
+        <i class="fa fa-times" aria-hidden="true" onclick="fecharAba()" ></i> 
         <div class="nome-cliente">
-            <h3>Nome:Fernando Souza</h3>
+            <h3>O PEDIDO SERÁ FINALIZADO!</h3>
         </div>
-        <hr>
-        <div class="pedido-cliente">
-            <h4>Pedido:</h4>
-            <table>
-                <tr>
-                    <th>Qtd.</th>
-                    <th>Nome do Produto</th>
-                    <th>Valor</th>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Fone de Ouvido</td>
-                    <td>100,00</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Pendrive</td>
-                    <td>30,00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Mouse</td>
-                    <td>40,00</td>
-                </tr>
-            </table>
-            <h4>Valor total: 170,00</h4>
-        </div>
-        <hr>
-        <div class="descricao-cliente">
-            <h4>Descrição:</h4>
-            <p>toda a descrição de informações extra</p>
-        </div>
-        <hr>
-        <div class="pagamento-cliente">
-            <h4>Metodo de pagamento:</h4>
-            <h3>Cartão</h3>
-        </div>
-        <hr>
-        <div class="endereco-cliente">
-            <h4>Endereço:</h4>
-            <p>Endereço: Rua XV de Novembro, 210</p>
-        </div>
+        
 
-        <button>Entregar</button>
+        <button>CANCELAR</button>
     </div>
-
-
     <!-- FILE IMAGE NO CATALOGO:-->
 
     <div class="catalogo" id="catalogo">
-        <i class="fa fa-times" aria-hidden="true" onclick="fecharAba()"></i>
+        <i class="fa fa-times" aria-hidden="true" onclick="fecharAba()" ></i> 
         <div class="categoria">
             <form action="./criarPedidoOuCategoria.php?tipo=categoria" method="POST">
                 <h1>Criar Nova Categoria:</h1>
@@ -201,13 +147,21 @@
         </div>
         <hr>
         <div class="produto">
-            <form action="./criarPedidoOuCategoria.php?tipo=produto" method="post">
+            <form action="./criarPedidoOuCategoria.php?tipo=produto" method="post" >
                 <h1>Adicionar um produto novo:</h1>
                 <!--<input type="file" name="" id="">-->
                 <label for="">Nome do Produto:</label>
                 <br>
                 <input type="text" placeholder=" Nome do Produto" name="nomeProduto">
                 <br>
+                <label for="">Preço:</label>
+                <br>
+               R$ <input type="number" step="0.01" placeholder= " Ex: 12.29 " name="precoProduto">
+                <br><br>
+                <label for="">URL da Imagem:</label>
+                <br>
+                <input type="text" name="imagemProduto">
+                <br><br>
                 <label for="">Selecione uma categoria:</label>
                 <div class="select-box">
                     <select name="categoriaProduto" id="">
@@ -270,16 +224,10 @@
     </div>
 
     <div class="historico-de-pedidos" id="historico">
-        <i class="fa fa-times" aria-hidden="true" onclick="fecharAba()"></i>
-        <label for="">Procurar Pedido:</label>
-        <div class="procurar">
+        <i class="fa fa-times" aria-hidden="true" onclick="fecharAba()" ></i> 
+        <div class="procurar"> Histórico de Pedidos
 
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" name="" id="spaceprocurar" placeholder="Buscar..." list="historico">
-            <datalist id="historico">
-                <option value="Info Box"></option>
-                <option value="Loja"></option>
-            </datalist>
+            
 
         </div>
 
@@ -288,13 +236,13 @@
                 <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
                 <td>
                     <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
+                    <h4>Data:12/12/2021</h4>
                 </td>
                 <td>
                     <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
+                    <h4>Kelber Silva</h4>
+                    <p>CPF: 07687211863</p>
+                    <p>Pediu: Mouse USB</p>
                 </td>
                 <td>
                     <!-- Método de pagamento -->
@@ -302,113 +250,42 @@
                 </td>
             </tr>
 
-            <tr>
-                <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
-                <td>
-                    <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
-                </td>
-                <td>
-                    <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
-                </td>
-                <td>
-                    <!-- Método de pagamento -->
-                    <h4>Cartão</h4>
-                </td>
-            </tr>
 
-            <tr>
-                <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
-                <td>
-                    <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
-                </td>
-                <td>
-                    <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
-                </td>
-                <td>
-                    <!-- Método de pagamento -->
-                    <h4>Cartão</h4>
-                </td>
-            </tr>
-            <tr>
-                <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
-                <td>
-                    <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
-                </td>
-                <td>
-                    <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
-                </td>
-                <td>
-                    <!-- Método de pagamento -->
-                    <h4>Cartão</h4>
-                </td>
-            </tr>
-            <tr>
-                <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
-                <td>
-                    <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
-                </td>
-                <td>
-                    <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
-                </td>
-                <td>
-                    <!-- Método de pagamento -->
-                    <h4>Cartão</h4>
-                </td>
-            </tr>
-            <tr>
-                <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
-                <td>
-                    <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
-                </td>
-                <td>
-                    <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
-                </td>
-                <td>
-                    <!-- Método de pagamento -->
-                    <h4>Cartão</h4>
-                </td>
-            </tr>
-            <tr>
-                <!-- NO MÁXIMO 3 COLUNAS UMAS COM A DATA E OUTRA COM AS INFORMAÇÕES-->
-                <td>
-                    <!-- Data do pedido quando foi entregue-->
-                    <h4>Data:22/01/2021</h4>
-                </td>
-                <td>
-                    <!-- Nome Cliente, CPF e Pedido-->
-                    <h4>Fernando Souza</h4>
-                    <p>CPF</p>
-                    <p>Pediu: Fone de Ouvido</p>
-                </td>
-                <td>
-                    <!-- Método de pagamento -->
-                    <h4>Cartão</h4>
-                </td>
-            </tr>
         </table>
+
     </div>
     <script src="../js/file.js"></script>
     <script src="../js/estabelecimento.js"></script>
+    <script> </script>
+
+
+<?php
+function php_func(){
+    echo "<script>console.log('Debug Objects: ' );</script>";
+}
+?>
+
+
+<script>
+window.onload = function() {
+    var el = document.getElementById('elementoTeste'); 
+
+el.addEventListener('click', function() { // no evento click 
+    clickMe(); // executa a função a() passando o tipo do metodo que é c();
+}, false);
+    
+    
+    
+        function clickMe(){
+        var result ="<?php button1(); ?>"
+        document.write(result)
+
+    }
+
+};
+</script>    
+
+
 
 </body>
 

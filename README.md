@@ -27,28 +27,6 @@ ________________________________________________________________________________
 create database delivery_shop;
 use delivery_shop;
 
-CREATE TABLE categoria(
-id int AUTO_INCREMENT,
-id_estabelecimento int,
-nome varchar(50),
-PRIMARY KEY (id),
-FOREIGN KEY (id_estabelecimento) REFERENCES estabelecimento(id)
-
-);
-
-CREATE TABLE produto(
-id int AUTO_INCREMENT,
-id_estabelecimento int,
-nome varchar(50),
-id_categoria int,
-descricao varchar(50),
-PRIMARY KEY (id),
-FOREIGN KEY (id_categoria) REFERENCES categoria(id),
-
-FOREIGN KEY (id_estabelecimento) REFERENCES estabelecimento(id)
-
-);
-
 CREATE TABLE pessoa_fisica(
 id int AUTO_INCREMENT ,
 nome varchar(50),
@@ -79,6 +57,42 @@ numero varchar(8),
 telefone varchar(20) ,
 PRIMARY KEY (id)
 );
+
+CREATE TABLE categoria(
+id int AUTO_INCREMENT,
+id_estabelecimento int,
+nome varchar(50),
+PRIMARY KEY (id),
+FOREIGN KEY (id_estabelecimento) REFERENCES estabelecimento(id)
+
+);
+
+CREATE TABLE produto(
+id int AUTO_INCREMENT,
+id_estabelecimento int,
+nome varchar(50),
+preco float(50),
+imagem varchar(9999),
+id_categoria int,
+descricao varchar(50),
+PRIMARY KEY (id),
+FOREIGN KEY (id_categoria) REFERENCES categoria(id),
+FOREIGN KEY (id_estabelecimento) REFERENCES estabelecimento(id)
+);
+
+CREATE TABLE pedido(
+id_pedido int AUTO_INCREMENT,
+numero_pedido varchar(10),
+id_pessoa int,
+id_produto int,
+quantidade int,
+subtotal float,
+valor_total float,
+PRIMARY KEY (id_pedido),
+FOREIGN KEY (id_pessoa) REFERENCES pessoa_fisica(id),
+FOREIGN KEY (id_produto) REFERENCES produto(id)
+);
+
 ____________________________________________________________________________________________
 
 4 - ABRIR O XAMPP CONTROL PAINEL E DAR START NO SERVIDOR APACHE;

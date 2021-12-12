@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/catalogo.css">
     <link rel="shortcut icon" href="../img/logo.jpg">
-    <title>Catálogo - Delivery Shop</title>
+    <title>Produtos Cadastrados</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
         }
     ?>
     <header>
-        <a href="./overview.php" class="voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <a href="./estabelecimento.php" class="voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
         <div class="perfil-loja">
             <img src="../img/teste.png" alt="">
             <?php
@@ -44,12 +44,9 @@
             } else {
                 while ($row = $result->fetch_array()) {
                     $innerHtml = "
-                    <h1>{$row['nome']}</h1>
-                    <p>Bairro: {$row['bairro']} - Rua: {$row['rua']} Nº: {$row['numero']}</p>
-                    <div>
-                <i class='fa fa-phone iconphone' id='phone' aria-hidden='true'></i>
-                <label for='phone'>Telefone: {$row['telefone']} </label>
-            </div>
+                    <h1>PRODUTOS CADASTRADOS</h1>
+                    
+                    
                     ";
                 }
                 echo $innerHtml;
@@ -94,25 +91,12 @@
                     
 
                     
-                    <img src={$row2['imagem']} >
+                    <img src={$row2['imagem']}>
                         <div class='catalogo-produtos-desc'>
                             <h2 class='catalogo-produtos-descz'>{$row2['nome']}</h2>
                             <p>R$ {$row2['preco']}</p>
                             <p>{$row2['descricao']}</p>
-                            <div class='quantity'>
-                                
-                                <input id='id_form-0-quantity' min='0' name='form-0-quantity' placeholder= '0' value='$quantidade' min='0' type='number'>
-                               
-
-                                <form method='post'>
-                                  <input type='submit' name='button1'
-                                     class='button' value='+' />
-          
-                                 <input type='submit' name='button2'
-                                     class='button' value='-' />
-                                </form>
-                               
-                            </div>
+                            
                         </div>
                         
                            
@@ -130,8 +114,6 @@
         }
 
         ?>
-
-<?php echo "<a href='fazerPedido.php?numero_pedido=6&id_produto=". $idProduto ."&quantidade=". $quantidade ."&valor=13'  class='button-comprar'>Fazer Pedido</a>" ?>
     </main>
  
 </body>

@@ -3,23 +3,24 @@ html{
 }
 body{
     height: 100%;
-    margin: 0;
+    margin: 5px;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: whitesmoke;
+    background: #d7d7d7;
 }
 
 
 header{
-    background-color: rgb(116, 0, 0);
+    background: #c2aaaa;
     text-align: center;
+    
 }
 
 .voltar{
     position: absolute;
     top: 12px;
     left: 17px;
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     font-size: 25px;
     transition: 0.3s;
 }
@@ -30,7 +31,7 @@ header{
 }
 
 .perfil-loja{
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px;
 }
 
@@ -80,42 +81,19 @@ main{
 }
 .titulo-categoria{
     background: rgb(116, 0, 0);
-    display: flex;
     border-radius: 20px;
     padding: 0;
     color: white;
+    text-align: center;
 }
 
 .titulo-categoria label{
-    display: flex;
+    display: grid;
 }
 
-.icon{
-    display: block;
-    position: relative;
-    top: 32px;
-    background: white;
-    width: 20px;
-    height: 3px;
-    margin-right: 40px;
-    left: 20px;
-  
-}
-
-
-.icon::after{
-    content: '';
-    background: white;
-    display: block;
-    width: 100%;
-    height: 100%;
-    transform: rotate(90deg);
-    transition: .5s ease-in-out;
-}
 
 
 .titulo-categoria label{
-    
     cursor: pointer;
 }
 .titulo-categoria input[type="checkbox"],.div-av input[type="checkbox"]{
@@ -123,12 +101,13 @@ main{
     
 }
 
-.titulo-categoria input:checked ~ label .icon::after{
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
-}
+
 
 /* INPUT NUMBER*/
+
+.catalogo-produtos-descz{
+    width: 400px;
+}
 
 .quantity{
     display:flex;
@@ -157,13 +136,12 @@ main{
     background:white;
     border:1px solid #aaa;
     cursor: pointer;
+    border: solid 1px;
+    border-color: black;
  }
  
 
- .quantity input{
-    border-left:none;
-    border-right:none;
- }
+ 
 
  /*PRODUTOS DO CATALOGO*/
 
@@ -176,6 +154,7 @@ main{
  }
 
  .catalogo-produtos img{
+     
      width: 150px;
      height: 150px;
      border: 2px solid rgb(116, 0, 0);
@@ -188,9 +167,10 @@ main{
 }
 
 main .button-comprar{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+    text-align: center;
+    margin-left: 44%;
+    margin-right: 44%;
     background: rgb(116, 0, 0);
     border: none;
     color: white;
