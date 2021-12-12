@@ -8,7 +8,9 @@ Tela de cadastro onde é possivel cadastar os dados do usuário sendo pessoa fis
 
 
 LINGUAGENS UTILIZADAS:
-PHP, Javascript e MySql
+PHP, HTML, CSS, Javascript e MySql
+
+Diretório Github: https://github.com/kelbergorpa/delivery_shop
 
 PARA EXECUTAR O SISTEMA :
 
